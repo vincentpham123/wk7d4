@@ -19,6 +19,15 @@ class User < ApplicationRecord
     before_validation :ensure_session_token
     attr_reader :password 
 
+    has_many :subs,
+        foreign_key: :moderator_id,
+        inverse_of: :moderator,
+        dependent: :destroy 
+    
+    has_many :posts,
+        foreign_key: :author_id,
+        inverse_of: :author,
+        dependent: :destroy
 
     def self.find_by_credentials(username, password)
         user = User.find_by(username: username)

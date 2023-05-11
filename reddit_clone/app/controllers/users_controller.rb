@@ -11,7 +11,7 @@ class UsersController < ApplicationController
         if @user.save 
             flash[:notices] = ['Successful Login']
             login!(@user)
-            render json: @user 
+            redirect_to subs_url 
         else
             flash.now[:errors] = @user.errors.full_messages 
             @user= User.new(username: params[:user][:username]).decorate

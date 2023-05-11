@@ -1,0 +1,13 @@
+<%=link_to "ALL SUBS", subs_url %>
+<br>
+<br>
+<br>
+<br>
+<%=link_to "Make a Post", new_sub_post_url(sub_id: @sub.id) %>
+<br>
+<% @sub.posts.each do |post| %>
+    <%=link_to post.title, post_url(id: post.id) %>
+    <br>
+    <br>
+<% end %>
+
