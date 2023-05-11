@@ -34,3 +34,5 @@ group :development do
 end
 
 gem "sassc"
+
+gem 'draper'

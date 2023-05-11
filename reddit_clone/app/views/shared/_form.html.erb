@@ -1,0 +1,15 @@
+
+
+<form action="<%=user.form_url(url_method)%>" method="POST">
+    <%=auth_token %>
+    <label for='User'>Username</label>
+    <input type='text' id='User' name='user[username]' value="<%=user.username%>">
+    <br>
+    <br>
+    <label for='pass'>Password</label>
+    <input type='password' id='pass' name='user[password]' value="">
+    <br>
+    <br>
+    <input type='submit' value="<%=user.submit_form(url_method)%>">
+
+</form>
